@@ -48,3 +48,9 @@ function close_setting_change_window() {
 //     var file = byid('setting_backgroud_input_file').files[0];
 //     alert(file.name);
 // }
+function set_background_picture()
+{   var data=localStorage.getItem("BackgroundPicture");
+    byid('setting_select_backgroud_view').style.backgroundImage = 'url(' + data + ')';
+    byid('search_backgroud').style.backgroundImage = 'url(' + data + ')';
+    byid('backgroud_blur').style.backgroundImage = 'url(' + data + ')';
+}

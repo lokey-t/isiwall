@@ -1,4 +1,4 @@
-window.onload = function ()//启动自运行
+window.onload = function ()//监听
 {
     //search功能
     byid("search_div").onmouseover = function () { if (byid('search_div').style.width != "450px") { byid('search_div').style.width = "350px"; }; };
@@ -11,6 +11,7 @@ window.onload = function ()//启动自运行
     // byid("box_add").onmouseover=function(){byid("box_add").style.opacity="0.8"};
     // my_favorite_delete_botton   box_add
 
+    //获取背景图片
     byid("setting_backgroud_input_file").addEventListener('change', function () {
         var file = byid("setting_backgroud_input_file").files[0];
         if (file.type !== 'image/jpeg' && file.type !== 'image/png' && file.type !== 'image/gif') {
@@ -21,7 +22,11 @@ window.onload = function ()//启动自运行
         reader.onload = function (e) {
             var data = e.target.result;
             byid('setting_select_backgroud_view').style.backgroundImage = 'url(' + data + ')';
+            byid('search_backgroud').style.backgroundImage = 'url(' + data + ')';
+            byid('backgroud_blur').style.backgroundImage = 'url(' + data + ')';
+            localStorage.setItem("BackgroundPicture", data)
             // alert(data);
+
         };
         reader.readAsDataURL(file);
     }
@@ -34,6 +39,11 @@ function byid(id)//获取id
 {
     return document.getElementById(id);
 }
-
-setTimeout(function () { if (localStorage.getItem("low_performance") == '1') { byid("backgroud_blur").style.diaplay = "none"; byid("search_change_style_return").style.display = "block" } }, 20);
-setTimeout('my_favorite_load_data()', 10);//启动后读取本地保存的书签缓存
+setTimeout('ready()',10);
+function ready()
+{
+    if (localStorage.getItem("low_performance") == '1')
+     { byid("backgroud_blur").style.diaplay = "none"; byid("search_change_style_return").style.display = "block" } 
+     my_favorite_load_data();
+     set_background_picture()
+}

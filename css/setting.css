@@ -237,7 +237,7 @@
      background-size:140px 100px;  
      background-color:rgb(194, 192, 192,.9);
      border-radius: 10px;
-     background-image: url(../background/png001.png);
+     /*background-image: url(../background/png001.png);*/
      float:left;
      display:block;
  }

@@ -4,7 +4,7 @@
      position:fixed;
      display:block;
      /* background:hsla(0,0%,100%,0.1); */
-     background-image: url(../background/jpg001.jpg);
+     /*background-image: url(../background/jpg001.jpg);*/
      background-position: center;
      background-size: cover;
      transform: scale(1.0);
@@ -19,7 +19,7 @@
  #search_backgroud
  {
      position:fixed;
-     background-image: url(../background/jpg001.jpg);;
+     /*background-image: url(../background/jpg001.jpg);;*/
      /* background-color:black; */
      background-position: center;
      background-size: cover;
