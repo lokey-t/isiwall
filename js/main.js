@@ -14,8 +14,8 @@ window.onload = function ()//监听
     //获取背景图片
     byid("setting_backgroud_input_file").addEventListener('change', function () {
         var file = byid("setting_backgroud_input_file").files[0];
-        if (file.type !== 'image/jpeg' && file.type !== 'image/png' && file.type !== 'image/gif') {
-            alert('不是有效的图片文件!');
+        if ((file.type !== 'image/jpeg' && file.type !== 'image/png' && file.type !== 'image/gif')||file.size>3145728) {
+            alert('图片格式必须为 JPEG PNG GIF 且不大于3M');
             return;
         }
         var reader = new FileReader();
